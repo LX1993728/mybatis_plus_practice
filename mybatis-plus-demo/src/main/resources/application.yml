@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    schema: classpath:db/schema-mysql.sql
+    data: classpath:db/data-mysql.sql
+    url: jdbc:mysql://localhost:3306/mybatis_plus?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    initialization-mode: always
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+

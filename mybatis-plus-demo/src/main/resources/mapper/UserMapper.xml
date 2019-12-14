@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuxun.mapper.UserMapper">
+
+	<resultMap id="BaseResultMap" type="com.liuxun.domain.User">
+		<id column="create_time" property="createTime" />
+		<id column="id" property="id" />
+		<id column="login_addr" property="loginAddr" />
+		<id column="login_ip" property="loginIp" />
+		<id column="login_name" property="loginName" />
+		<id column="nickname" property="nickname" />
+		<id column="note" property="note" />
+		<id column="password" property="password" />
+		<id column="state" property="state" />
+		<id column="type" property="type" />
+		<id column="update_time" property="updateTime" />
+		<id column="update_uid" property="updateUid" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		create_time, id, login_addr, login_ip, login_name, nickname, note, password, state, type, update_time, update_uid
+	</sql>
+	
+</mapper>
