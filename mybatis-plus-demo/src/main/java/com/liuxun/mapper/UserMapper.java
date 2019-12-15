@@ -7,8 +7,14 @@
 package com.liuxun.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.liuxun.domain.User;
+import com.liuxun.domain.po.UserBookItem;
+import com.liuxun.domain.vo.UserBookItemParam;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**   
  * <p>自动生成工具：mybatis-dsc-generator</p>
@@ -18,7 +24,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @author: liuxun
  * 
  */
-@Mapper
 public interface UserMapper extends BaseMapper<User> {
-	
+	List<UserBookItem> selectUserBookItems(Page page, @Param("param") UserBookItemParam param);
 }

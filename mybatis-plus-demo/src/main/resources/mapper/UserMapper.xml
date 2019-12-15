@@ -19,5 +19,35 @@
 	<sql id="Base_Column_List">
 		create_time, id, login_addr, login_ip, login_name, nickname, note, password, state, type, update_time, update_uid
 	</sql>
-	
+	<select id="selectUserBookItems" resultType="com.liuxun.domain.po.UserBookItem">
+		SELECT u.id AS userId, u.nickname AS nickname, b.id AS bookId,
+		b.book_name AS  bookName, b.author AS author
+		from `user` u
+		LEFT JOIN book b ON u.id=b.user_id
+		WHERE 1=1
+		<if test="param.nickName != null">
+			and u.nickname like "%"#{param.nickname}"%"
+		</if>
+		<if test="param.bookName != null">
+			and b.bookName like "%"#{param.bookName}"%"
+		</if>
+		<if test="param.author != null">
+			and b.author like "%"#{param.nickname}"%"
+		</if>
+
+		<if test="param.sortedField != null ">
+			<if test="param.sortedField.equals('userId')">
+				order by u.id
+			</if>
+			<if test="param.sortedField.equals('bookId')">
+				order by b.id
+			</if>
+
+			<if test="param.isDesc != null and  param.isDesc.equals(true)" >
+				desc
+			</if>
+		</if>
+
+	</select>
+
 </mapper>

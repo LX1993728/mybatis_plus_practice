@@ -25,9 +25,9 @@ public class MyGenerator {
     public static final String PASS = "root";
     public static final String DATABASE = "mybatis_plus";
     // 类信息：类名、对象名（一般是【类名】的首字母小些）、类说明、时间
-    public static final String CLASSNAME = "User";
-    public static final String TABLE = "user";
-    public static final String CLASSCOMMENT = "用户";
+    public static final String CLASSNAME = "Book";
+    public static final String TABLE = "book";
+    public static final String CLASSCOMMENT = "书";
     public static final String TIME = "2019年9月14日";
     public static final String AGILE = new Date().getTime() + "";
     // 路径信息，分开路径方便聚合工程项目，微服务项目
@@ -54,16 +54,16 @@ public class MyGenerator {
             bi = EntityInfoUtil.getInfo(bi);
             String fileUrl = FILE_URL;// 生成文件存放位置
             //开始生成文件
-//            String aa1 = Generator.createEntity(fileUrl, bi).toString();
-//            String aa2 = Generator.createDao(fileUrl, bi).toString();
-//            String aa3 = Generator.createDaoImpl(fileUrl, bi).toString();
-//            String aa4 = Generator.createService(fileUrl, bi).toString();
-//            String aa5 = Generator.createServiceImpl(fileUrl, bi).toString();
-//            String aa6 = Generator.createController(fileUrl, bi).toString();
-//
-//            System.out.println(aa1);
-//            System.out.println(aa2); System.out.println(aa3); System.out.println(aa4);
-//            System.out.println(aa5); System.out.println(aa6);
+            String aa1 = Generator.createEntity(fileUrl, bi).toString();
+            String aa2 = Generator.createDao(fileUrl, bi).toString();
+            String aa3 = Generator.createDaoImpl(fileUrl, bi).toString();
+            String aa4 = Generator.createService(fileUrl, bi).toString();
+            String aa5 = Generator.createServiceImpl(fileUrl, bi).toString();
+            String aa6 = Generator.createController(fileUrl, bi).toString();
+
+            System.out.println(aa1);
+            System.out.println(aa2); System.out.println(aa3); System.out.println(aa4);
+            System.out.println(aa5); System.out.println(aa6);
             if (Boolean.parseBoolean(bi.getIsSwagger())){
                 String aa7 = Generator.createSwaggerConfig(fileUrl, bi).toString();
                 System.out.println(aa7);

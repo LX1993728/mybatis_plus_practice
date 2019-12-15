@@ -6,8 +6,11 @@
  */
 package com.liuxun.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.liuxun.domain.User;
+import com.liuxun.domain.po.UserBookItem;
+import com.liuxun.domain.vo.UserBookItemParam;
 
 /**
  * <p>自动生成工具：mybatis-dsc-generator</p>
@@ -18,5 +21,5 @@ import com.liuxun.domain.User;
  * 
  */
 public interface UserService extends IService<User> {
-	
+	Page<UserBookItem> selectUserListByPage(UserBookItemParam itemParam);
 }
