@@ -20,19 +20,18 @@ public class MyGenerator {
     public static final String AUTHOR = "liuxun";
     public static final String VERSION = "V1.0";
     // 数据库连接信息：连接URL、用户名、秘密、数据库名
-    public static final String URL = "jdbc:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=true&serverTimezone=UTC";
-    public static final String NAME = "root";
-    public static final String PASS = "root";
-    public static final String DATABASE = "mybatis_plus";
+    public static final String URL = "jdbc:mysql://172.18.28.230:3306/hd_cfg_api?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=true&serverTimezone=UTC";
+    public static final String NAME = "hd_cfg_api";
+    public static final String PASS = "hd_cfg_api";
+    public static final String DATABASE = "hd_cfg_api";
     // 类信息：类名、对象名（一般是【类名】的首字母小些）、类说明、时间
-    public static final String CLASSNAME = "Book";
-    public static final String TABLE = "book";
-    public static final String CLASSCOMMENT = "书";
-    public static final String TIME = "2019年9月14日";
+    public static final String TABLE = "sys_role_menu";
+    public static final String CLASSCOMMENT = "角色-菜单关系";
+    public static final String TIME = "2020年1月27日";
     public static final String AGILE = new Date().getTime() + "";
     // 路径信息，分开路径方便聚合工程项目，微服务项目
     public static final String FILE_URL = System.getProperty("user.dir") + "/generated_code/src/main/java/";
-    public static final String BASE_URL = "com.liuxun";
+    public static final String BASE_URL = "com.baishancloud.orchsym.hd.system";
     public static final String ENTITY_URL = BASE_URL + "." + "domain";
     public static final String DAO_URL = BASE_URL + "." + "mapper" ;
     public static final String XML_URL = "mapper";
@@ -49,7 +48,7 @@ public class MyGenerator {
         bi.setEntityName(MySqlToJavaUtil.getClassName(TABLE));
         bi.setObjectName(MySqlToJavaUtil.changeToJavaFiled(TABLE));
         bi.setEntityComment(CLASSCOMMENT);
-        bi.setSwaggerConfigUrl(SWAGGER_CONFIG_URL);
+//        bi.setSwaggerConfigUrl(SWAGGER_CONFIG_URL);
         try {
             bi = EntityInfoUtil.getInfo(bi);
             String fileUrl = FILE_URL;// 生成文件存放位置
