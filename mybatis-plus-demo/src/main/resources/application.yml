@@ -1,6 +1,13 @@
 server:
   port: 8080
 
+# 设置javamelody监控登录的用户名密码 地址 http://localhost:8080/monitoring
+javamelody:
+  enabled: true
+  init-parameters:
+    authorized-users: admin:123456
+    monitoring-path: /monitoring
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
