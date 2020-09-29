@@ -1,0 +1,2 @@
+INSERT INTO `user`(`id`, `login_name`, `password`, `nickname`, `type`, `state`, `note`, `create_time`, `update_time`, `update_uid`, `login_ip`, `login_addr`) VALUES (1, 'aaa', '123456', 'AAA', 1, 1, NULL, '2019-12-14 20:59:50', '2019-12-14 20:59:56', 0, NULL, NULL);
+INSERT INTO `user`(`id`, `login_name`, `password`, `nickname`, `type`, `state`, `note`, `create_time`, `update_time`, `update_uid`, `login_ip`, `login_addr`) VALUES (2, 'bbb', '123456', 'AAA', 1, 1, NULL, '2019-12-14 20:59:50', '2019-12-14 20:59:56', 0, NULL, NULL);
