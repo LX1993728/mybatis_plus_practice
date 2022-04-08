@@ -49,5 +49,8 @@
 		</if>
 
 	</select>
+	<select id="selectUsers" resultType="com.liuxun.domain.po.UserBookItem">
+		select * from user ;
+	</select>
 
 </mapper>

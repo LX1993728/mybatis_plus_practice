@@ -8,11 +8,15 @@ package com.liuxun.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.liuxun.annotations.RefundSwitch;
 import com.liuxun.domain.User;
+import com.liuxun.domain.enums.ArgumentType;
+import com.liuxun.domain.enums.MethodEnum;
 import com.liuxun.domain.po.UserBookItem;
 import com.liuxun.domain.vo.UserBookItemParam;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -24,6 +28,10 @@ import java.util.List;
  * @author: liuxun
  * 
  */
+@Repository
 public interface UserMapper extends BaseMapper<User> {
 	List<UserBookItem> selectUserBookItems(Page page, @Param("param") UserBookItemParam param);
+
+	@RefundSwitch(method = MethodEnum.REFUND_ORDER_QUERY, argument = ArgumentType.QUERY_BY_ORDERNO)
+	List<UserBookItem> selectUsers();
 }

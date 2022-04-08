@@ -1,21 +1,14 @@
 server:
   port: 8080
 
-# 设置javamelody监控登录的用户名密码 地址 http://localhost:8080/monitoring
-javamelody:
-  enabled: true
-  init-parameters:
-    authorized-users: admin:123456
-    monitoring-path: /monitoring
-
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     schema: classpath:db/schema-mysql.sql
     data: classpath:db/data-mysql.sql
     url: jdbc:mysql://localhost:3306/mybatis_plus?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     username: root
-    password: root
+    password: 123456
     initialization-mode: never
 
 mybatis-plus:
